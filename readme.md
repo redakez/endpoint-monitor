@@ -110,6 +110,6 @@ The following is an example of a JSON body containing a monitoring result:
 }
 ```
 
-## Postman collection :postbox:
+## :postbox: Postman collection 
 
 A [Postman](https://www.postman.com/) collection with all above-mentioned API endpoints is available in file `endpoint_monitoring.postman_collection.json`.
