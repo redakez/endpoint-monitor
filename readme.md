@@ -1,12 +1,12 @@
-# Endpoint Monitoring Service
+# :desktop_computer: Endpoint Monitoring Service
 
 This repository contains a microservice which periodically sends GET requests to given URLs and saves responses into a MySQL database.
 The results may then be retrieved using the application's REST API. 
 The application is implemented in Java 11 and the Spring Boot framework. 
 
-# How to build and run
+# :wrench: How to build and run
 
-## Method 1: Let Docker handle everything
+## Method 1: :whale: Let Docker handle everything
 
 Install [Docker](https://www.docker.com) and then execute the following command in the root of the repository:
 
@@ -17,7 +17,7 @@ docker-compose up --build
 Docker will run both the microservice and a MySQL database.
 The microservice will be running on port specified in the variable `SPRING_LOCAL_PORT` in the `.env` file.
 
-## Method 2: Using maven and your own MySQL database
+## Method 2: :hammer: Using maven and your own MySQL database
 
 This method requires Java 11 and Maven 3 or newer.
 First, set the following propreties in the `src/main/resources/application.properties` file:  
@@ -40,14 +40,14 @@ java -jar ./target/endpoint-monitor-1.0.jar
 
 The application will be running on port 8080.
 
-# Using the application
+# :keyboard: Using the application
 
 The application has no graphical user interface and only provides a REST API.
 Requests accepted by the API are further specified below.
 
-## Application's endpoints
+## :electric_plug: Application's endpoints
 
-### Users
+### Users :adult:
 
 User management accessable under the `/users` path is currently **not secured in any way and requires no authentication**.
 
@@ -71,7 +71,7 @@ The following is an example of a JSON body containing a user object:
 
 The `accessToken` must be in a UUID4 format.
 
-### Monitored endpoints
+### Monitored endpoints :signal_strength:
 
 Each request to the `/endpoints` path requires user's access token in the header, specifically under the key `accessToken`.
 Only the user who has created an endpoint monitor can access, modify, and delete it.
@@ -110,6 +110,6 @@ The following is an example of a JSON body containing a monitoring result:
 }
 ```
 
-### Attached postman collection
+### Postman collection :postbox:
 
 A [Postman](https://www.postman.com/) collection with all above-mentioned API endpoints is available in file `endpoint_monitoring.postman_collection.json`.
